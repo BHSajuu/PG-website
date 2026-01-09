@@ -41,7 +41,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
@@ -56,7 +56,7 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl mb-6 mt-28 text-gray-900">Contact Information</h3>
+              <h3 className="text-2xl mb-6 md:mt-28 text-gray-900">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-100 p-3 rounded-lg">

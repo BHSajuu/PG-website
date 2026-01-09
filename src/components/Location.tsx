@@ -7,7 +7,7 @@ import {
 
 export function Location() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="location" className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
@@ -23,8 +23,7 @@ export function Location() {
           {/* Map */}
           <div className="bg-white rounded-xl overflow-hidden shadow-lg h-96 lg:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57951.751554224065!2d92.73339902305833!3d24.79598522976926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49f3bdc2a643%3A0x99205e807ec43104!2sSilchar%20Medical%20College%20and%20Hospital!5e0!3m2!1sen!2sin!4v1767885628532!5m2!1sen!2sin"              
-              width="100%"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57951.751554224065!2d92.73339902305833!3d24.79598522976926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49f3bdc2a643%3A0x99205e807ec43104!2sSilchar%20Medical%20College%20and%20Hospital!5e0!3m2!1sen!2sin!4v1767885628532!5m2!1sen!2sin"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
@@ -36,7 +35,7 @@ export function Location() {
 
           {/* Nearby Places */}
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
                   <GraduationCap
@@ -58,7 +57,7 @@ export function Location() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600">
               <div className="flex items-start gap-4">
                 <div className="bg-green-100 p-3 rounded-lg">
                   <Bus size={28} className="text-green-600" />
@@ -77,7 +76,7 @@ export function Location() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-600">
               <div className="flex items-start gap-4">
                 <div className="bg-orange-100 p-3 rounded-lg">
                   <ShoppingBag

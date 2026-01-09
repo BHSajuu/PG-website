@@ -64,11 +64,11 @@ export function BookingModal({ isOpen, onClose, roomTitle, roomPrice, roomType }
 
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white rounded-xl max-w-2xl w-full my-8">
+      <div className="bg-white rounded-xl max-w-2xl w-full md:my-8">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b">
+        <div className="flex items-center justify-between py-3 px-6 md:px-6 md:py-6 border-b">
           <div>
-            <h2 className="text-2xl text-gray-900">Book Your Room</h2>
+            <h2 className="md:text-2xl text-gray-900">Book Your Room</h2>
             <p className="text-gray-600">{roomTitle} - {roomType}</p>
           </div>
           <button
@@ -81,11 +81,11 @@ export function BookingModal({ isOpen, onClose, roomTitle, roomPrice, roomType }
 
         {/* Progress Steps */}
         {!bookingConfirmed && (
-          <div className="flex items-center justify-center gap-2 p-6 border-b">
+          <div className="flex items-center justify-center gap-2 py-3 px-6 md:px-6 md:py-6 border-b">
             {[1, 2, 3].map((num) => (
               <div key={num} className="flex items-center">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                  className={`w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center ${
                     step >= num ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'
                   }`}
                 >
@@ -104,8 +104,8 @@ export function BookingModal({ isOpen, onClose, roomTitle, roomPrice, roomType }
         )}
 
         {/* Content */}
-        <div className="p-6">
-          {true ? (
+        <div className="py-3 px-6 md:px-6 md:py-6">
+          {bookingConfirmed ? (
             <div className="text-center py-8">
               <div className="text-6xl mb-4">🎉</div>
               <h3 className="text-3xl mb-4 text-gray-900">Booking Confirmed!</h3>
@@ -350,19 +350,19 @@ export function BookingModal({ isOpen, onClose, roomTitle, roomPrice, roomType }
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex gap-4 mt-6">
+              <div className="flex gap-4 mt-3">
                 {step > 1 && (
                   <button
                     type="button"
                     onClick={() => setStep(step - 1)}
-                    className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex-1 px-1 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
                   >
                     Previous
                   </button>
                 )}
                 <button
                   type="submit"
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
+                  className="flex-1 px-1 py-2 bg-blue-600 hover:bg-blue-700 text-white md:px-6 md:py-3 rounded-lg transition-colors"
                 >
                   {step === 3 ? 'Confirm Booking' : 'Next'}
                 </button>
