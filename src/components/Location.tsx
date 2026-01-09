@@ -1,41 +1,62 @@
+"use client";
+
 import {
   MapPin,
   Bus,
   ShoppingBag,
   GraduationCap,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Location() {
   return (
     <section id="location" className="py-10 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl mb-4 text-gray-900">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl mb-4 text-gray-900 font-bold">
             Prime Location
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Strategically located with easy access to colleges,
             markets, and public transport
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8  md:gap-28">
           {/* Map */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg h-96 lg:h-auto">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-xl overflow-hidden shadow-lg h-96 lg:h-auto"
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57951.751554224065!2d92.73339902305833!3d24.79598522976926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49f3bdc2a643%3A0x99205e807ec43104!2sSilchar%20Medical%20College%20and%20Hospital!5e0!3m2!1sen!2sin!4v1767885628532!5m2!1sen!2sin"
               height="100%"
+              width="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="PG Location Map"
             ></iframe>
-          </div>
+          </motion.div>
 
           {/* Nearby Places */}
-          <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-100 p-3 rounded-lg">
                   <GraduationCap
@@ -44,7 +65,7 @@ export function Location() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-2 text-gray-900">
+                  <h3 className="text-xl mb-2 text-gray-900 font-semibold">
                     Nearby Colleges
                   </h3>
                   <ul className="space-y-1 text-gray-600">
@@ -57,13 +78,13 @@ export function Location() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-600 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="bg-green-100 p-3 rounded-lg">
                   <Bus size={28} className="text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-2 text-gray-900">
+                  <h3 className="text-xl mb-2 text-gray-900 font-semibold">
                     Public Transport
                   </h3>
                   <ul className="space-y-1 text-gray-600">
@@ -76,7 +97,7 @@ export function Location() {
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-600">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-600 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="bg-orange-100 p-3 rounded-lg">
                   <ShoppingBag
@@ -85,7 +106,7 @@ export function Location() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl mb-2 text-gray-900">
+                  <h3 className="text-xl mb-2 text-gray-900 font-semibold">
                     Shopping & Dining
                   </h3>
                   <ul className="space-y-1 text-gray-600">
@@ -98,11 +119,11 @@ export function Location() {
               </div>
             </div>
 
-            <div className="bg-blue-600 text-white p-6 rounded-xl">
+            <div className="bg-blue-600 text-white p-6 rounded-xl shadow-lg">
               <div className="flex items-start gap-4">
                 <MapPin size={28} />
                 <div>
-                  <h3 className="text-xl mb-2">
+                  <h3 className="text-xl mb-2 font-semibold">
                     Campus PG Address
                   </h3>
                   <p className="text-blue-100">
@@ -115,7 +136,7 @@ export function Location() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
